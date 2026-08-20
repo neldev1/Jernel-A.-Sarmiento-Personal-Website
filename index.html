@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jernel A. Sarmiento &mdash; Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav-logo">&lt;JS/&gt;</a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="nav-cta">Let's Talk</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal"><span class="dot"></span> Available for opportunities</p>
+    <h1 class="hero-title reveal">
+      Hi, I'm <span class="gradient-text">Jernel</span><br>
+      I build things for <span class="typed-wrap"><span class="typed" id="typed"></span><span class="caret">|</span></span>
+    </h1>
+    <p class="hero-sub reveal">Web developer crafting clean, fast, and reliable websites using HTML, CSS, JavaScript, PHP &amp; MySQL.</p>
+    <div class="hero-actions reveal">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <p class="section-tag reveal">01 &mdash; About</p>
+  <h2 class="section-title reveal">A little about me</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a 4th year college student and web developer who enjoys turning ideas into working software &mdash; whether that's a slick front-end interface or a solid back-end system. I care about clean code, good UX, and shipping things that actually work.</p>
+      <p>When I'm not coding, I'm usually learning something new, exploring design trends, or tinkering with side projects just for fun.</p>
+      <a href="#" class="btn btn-outline" id="resumeBtn">Download Resume</a>
+    </div>
+    <div class="about-card reveal">
+      <div class="about-card-inner">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <p>about-me.js</p>
+          </div>
+          <pre class="terminal-body"><code><span class="c-key">const</span> <span class="c-var">developer</span> = {
+  <span class="c-prop">name</span>: <span class="c-str">"Jernel A. Sarmiento"</span>,
+  <span class="c-prop">role</span>: <span class="c-str">"Web Developer"</span>,
+  <span class="c-prop">stack</span>: [<span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>, <span class="c-str">"JS"</span>, <span class="c-str">"PHP"</span>, <span class="c-str">"MySQL"</span>],
+  <span class="c-prop">passion</span>: <span class="c-str">"Building cool stuff"</span>,
+  <span class="c-prop">status</span>: <span class="c-str">"Open to work"</span>
+};</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <p class="section-tag reveal">02 &mdash; Skills</p>
+  <h2 class="section-title reveal">Tools I work with</h2>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">&lt;/&gt;</div>
+      <h3>HTML &amp; CSS</h3>
+      <p>Semantic markup, responsive layouts, animations</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">{ }</div>
+      <h3>JavaScript</h3>
+      <p>DOM manipulation, interactivity, ES6+</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">php</div>
+      <h3>PHP</h3>
+      <p>Server-side logic, dynamic web apps</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">DB</div>
+      <h3>MySQL</h3>
+      <p>Database design, queries, XAMPP</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <p class="section-tag reveal">03 &mdash; Projects</p>
+  <h2 class="section-title reveal">Things I've built</h2>
+  <div class="projects-grid">
+    <article class="project-card reveal">
+      <div class="project-glow"></div>
+      <div class="project-top">
+        <span class="project-num">01</span>
+        <div class="project-links">
+          <a href="#" aria-label="View code" title="Repo coming soon">&lt;/&gt;</a>
+          <a href="#" aria-label="Live demo" title="Currently running on localhost">&#8599;</a>
+        </div>
+      </div>
+      <h3>PetHealthCare</h3>
+      <p>A web-based veterinary clinic management system with an AI assistant &mdash; handles patient records, appointments, and clinic operations.</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <p class="section-tag reveal">04 &mdash; Contact</p>
+  <h2 class="section-title reveal">Let's build something together</h2>
+  <p class="contact-sub reveal">Got a project in mind or just want to say hi? My inbox is always open.</p>
+  <a href="mailto:aldreedjohnguevara27@gmail.com" class="btn btn-primary btn-lg reveal">Say Hello &rarr;</a>
+  <div class="socials reveal">
+    <a href="#" target="_blank" rel="noopener">GitHub</a>
+    <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#" target="_blank" rel="noopener">Twitter/X</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Designed &amp; built by Jernel A. Sarmiento &mdash; <span id="year"></span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
