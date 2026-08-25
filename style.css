@@ -240,6 +240,10 @@ ul { list-style: none; }
   padding: 24px 28px; transition: border-color 0.3s ease, transform 0.3s ease;
 }
 .edu-card:hover { border-color: var(--accent-2); transform: translateX(4px); }
+.edu-level {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
 .edu-year {
   font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-2); letter-spacing: 0.5px;
 }
