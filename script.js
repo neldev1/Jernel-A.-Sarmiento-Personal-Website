@@ -44,11 +44,3 @@ revealEls.forEach(el => observer.observe(el));
 
 // ---------- Footer year ----------
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// ---------- Resume button placeholder ----------
-document.querySelectorAll('.resume-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    alert('Add your resume PDF and link it here (e.g. href="resume.pdf" download).');
-  });
-});
