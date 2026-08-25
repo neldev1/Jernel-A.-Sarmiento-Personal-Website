@@ -18,16 +18,17 @@
 
 <!-- NAV -->
 <header class="nav" id="nav">
-  <a href="#home" class="nav-logo">&lt;JS/&gt;</a>
+  <a href="#home" class="nav-brand">
+    <span class="nav-avatar">J</span>
+    <span class="nav-word">JERNEL<span class="nav-dot">.</span></span>
+  </a>
   <nav class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
   </nav>
-  <a href="#contact" class="nav-cta">Let's Talk</a>
+  <a href="#contact" class="nav-cta">Hire Me</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -35,19 +36,35 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-content">
-    <p class="hero-eyebrow reveal"><span class="dot"></span> Available for opportunities</p>
-    <h1 class="hero-title reveal">
-      Hi, I'm <span class="gradient-text">Jernel</span><br>
-      I build things for <span class="typed-wrap"><span class="typed" id="typed"></span><span class="caret">|</span></span>
-    </h1>
-    <p class="hero-sub reveal">Web developer crafting clean, fast, and reliable websites using HTML, CSS, JavaScript, PHP &amp; MySQL.</p>
-    <div class="hero-actions reveal">
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <p class="hero-badge reveal"><span class="dot"></span> OPEN TO WORK &mdash; <span class="placeholder-text">[full-time &middot; role type]</span></p>
+      <h1 class="hero-name reveal">Jernel <span class="gradient-text">A. Sarmiento</span></h1>
+      <p class="hero-roles reveal">Web Developer &middot; <span class="placeholder-text">[role two]</span> &middot; <span class="placeholder-text">[role three]</span></p>
+      <p class="hero-desc reveal placeholder-text">[Add a short paragraph about yourself here — your focus, what drives you, and what you bring to a team.]</p>
+      <div class="hero-actions reveal">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#" class="btn btn-ghost resume-btn">Download Resume (PDF)</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><span class="stat-num placeholder-text">[0]</span><span class="stat-label placeholder-text">[stat label]</span></div>
+        <div class="stat"><span class="stat-num placeholder-text">[0]</span><span class="stat-label placeholder-text">[stat label]</span></div>
+        <div class="stat"><span class="stat-num placeholder-text">[0]</span><span class="stat-label placeholder-text">[stat label]</span></div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="profile-avatar">JS</div>
+      <h3 class="profile-name">Jernel A. Sarmiento</h3>
+      <p class="profile-degree placeholder-text">[BS Information Systems &mdash; expected year]</p>
+      <p class="profile-loc placeholder-text">[Your location]</p>
+      <div class="profile-divider"></div>
+      <div class="profile-row"><span>Status</span><strong class="status-ok">Open to work</strong></div>
+      <div class="profile-row"><span>Work setup</span><strong class="placeholder-text">[Onsite / Remote / Hybrid]</strong></div>
+      <div class="profile-row"><span>Languages</span><strong class="placeholder-text">[Your languages]</strong></div>
+      <div class="profile-row"><span>Phone</span><strong class="placeholder-text">[Your phone number]</strong></div>
     </div>
   </div>
-  <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
 </section>
 
 <!-- ABOUT -->
@@ -58,7 +75,7 @@
     <div class="about-text reveal">
       <p>I'm a 4th year college student and web developer who enjoys turning ideas into working software &mdash; whether that's a slick front-end interface or a solid back-end system. I care about clean code, good UX, and shipping things that actually work.</p>
       <p>When I'm not coding, I'm usually learning something new, exploring design trends, or tinkering with side projects just for fun.</p>
-      <a href="#" class="btn btn-outline" id="resumeBtn">Download Resume</a>
+      <a href="#" class="btn btn-outline resume-btn">Download Resume</a>
     </div>
     <div class="about-card reveal">
       <div class="about-card-inner">
