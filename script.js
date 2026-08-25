@@ -1,3 +1,12 @@
+// ---------- Theme toggle ----------
+const root = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
 // ---------- Nav scroll state ----------
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
