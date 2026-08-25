@@ -215,7 +215,7 @@ ul { list-style: none; }
 .c-key { color: #ff79c6; } .c-var { color: #8be9fd; } .c-prop { color: #66d9ef; } .c-str { color: #a6e22e; }
 
 /* ---------- Skills ---------- */
-.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .skill-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
   padding: 32px 24px; transition: all 0.35s ease; position: relative; overflow: hidden;
@@ -293,6 +293,7 @@ ul { list-style: none; }
 .skills-grid .skill-card:nth-child(2) { transition-delay: 0.08s; }
 .skills-grid .skill-card:nth-child(3) { transition-delay: 0.16s; }
 .skills-grid .skill-card:nth-child(4) { transition-delay: 0.24s; }
+.skills-grid .skill-card:nth-child(5) { transition-delay: 0.32s; }
 .projects-grid .project-card:nth-child(1) { transition-delay: 0s; }
 .projects-grid .project-card:nth-child(2) { transition-delay: 0.1s; }
 .projects-grid .project-card:nth-child(3) { transition-delay: 0.2s; }
