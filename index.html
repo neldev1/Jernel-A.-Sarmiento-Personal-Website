@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <div class="bg-grid"></div>
@@ -19,12 +20,13 @@
 
 <!-- NAV -->
 <header class="nav" id="nav">
+  <a href="#home" class="nav-word">JERNEL SARMIENTO</a>
   <div class="nav-right">
     <nav class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Work</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
       <span class="icon-sun">&#9728;&#65039;</span>
@@ -42,11 +44,11 @@
   <div class="hero-grid">
     <div class="hero-left">
       <p class="hero-badge reveal"><span class="dot"></span> OPEN TO WORK &mdash; FULL TIME</p>
-      <h1 class="hero-name reveal">Jernel <span class="gradient-text">A. Sarmiento</span></h1>
+      <h1 class="hero-name reveal">Jernel<br><span class="gradient-text">A. Sarmiento</span></h1>
       <p class="hero-roles reveal">Web Developer &middot; AI-Assisted Software Developer</p>
       <div class="hero-actions reveal">
-        <a href="#contact" class="btn btn-primary">Contact Me</a>
-        <a href="resume.pdf" download="Jernel-Sarmiento-Resume.pdf" class="btn btn-ghost">Download Resume (PDF)</a>
+        <a href="#contact" class="btn btn-primary magnetic">Contact Me</a>
+        <a href="resume.pdf" download="Jernel-Sarmiento-Resume.pdf" class="btn btn-ghost magnetic">Download Resume (PDF)</a>
       </div>
     </div>
 
@@ -62,22 +64,38 @@
       <div class="profile-row"><span>Email</span><strong><a href="mailto:jernelsarmiento71@gmail.com">jernelsarmiento71@gmail.com</a></strong></div>
     </div>
   </div>
+  <a href="#about" class="scroll-cue reveal">SCROLL TO EXPLORE <span>&darr;</span></a>
 </section>
 
 <!-- ABOUT -->
 <section class="section" id="about">
-  <p class="section-tag reveal">01 &mdash; About</p>
-  <h2 class="section-title reveal">A little about me</h2>
-  <div class="about-text reveal">
-    <p>I'm a fresh graduate and web developer who enjoys turning ideas into working software &mdash; whether that's a slick front-end interface or a solid back-end system. I don't have professional work experience yet, but I've built a solid foundation through personal projects, coursework, and hours of hands-on practice.</p>
-    <p>I'm eager to bring that curiosity, adaptability, and willingness to learn into my first role &mdash; and I'm always exploring something new, whether it's a design trend, a tool, or a side project just for fun.</p>
+  <p class="section-tag reveal">01 &mdash; ABOUT</p>
+  <div class="about-grid">
+    <h2 class="about-statement reveal">A DEVELOPER<br>TURNING IDEAS INTO<br><span class="gradient-text">WORKING SOFTWARE.</span></h2>
+    <div class="about-side">
+      <div class="about-text reveal">
+        <p>I'm a fresh graduate and web developer who enjoys turning ideas into working software &mdash; whether that's a slick front-end interface or a solid back-end system. I don't have professional work experience yet, but I've built a solid foundation through personal projects, coursework, and hours of hands-on practice.</p>
+        <p>I'm eager to bring that curiosity, adaptability, and willingness to learn into my first role &mdash; and I'm always exploring something new, whether it's a design trend, a tool, or a side project just for fun.</p>
+      </div>
+      <div class="about-meta reveal">
+        <span class="meta-label">Based In</span>
+        <p>San Jose Del Monte, Bulacan, Philippines</p>
+        <span class="meta-label">Focus</span>
+        <ul class="focus-list">
+          <li>Web Development</li>
+          <li>Front-End &amp; Back-End (PHP / MySQL)</li>
+          <li>AI-Assisted Development</li>
+          <li>Design &amp; Content Tools</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- EDUCATION -->
 <section class="section" id="education">
-  <p class="section-tag reveal">02 &mdash; Education</p>
-  <h2 class="section-title reveal">Educational background</h2>
+  <p class="section-tag reveal">02 &mdash; EDUCATION</p>
+  <h2 class="section-title reveal">Educational Background</h2>
   <div class="edu-timeline">
     <div class="edu-item reveal">
       <div class="edu-dot"></div>
@@ -110,8 +128,16 @@
 
 <!-- SKILLS -->
 <section class="section" id="skills">
-  <p class="section-tag reveal">03 &mdash; Skills</p>
-  <h2 class="section-title reveal">Tools I work with</h2>
+  <p class="section-tag reveal">03 &mdash; CAPABILITIES</p>
+  <h2 class="section-title reveal">Tools I Use To Build</h2>
+
+  <div class="marquee reveal">
+    <div class="marquee-track">
+      <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>PHP</span><span>MYSQL</span><span>AI TOOLS</span><span>CANVA</span><span>CAPCUT</span><span>MICROSOFT OFFICE</span>
+      <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>PHP</span><span>MYSQL</span><span>AI TOOLS</span><span>CANVA</span><span>CAPCUT</span><span>MICROSOFT OFFICE</span>
+    </div>
+  </div>
+
   <div class="skills-grid">
     <div class="skill-card reveal">
       <div class="skill-icon">&lt;/&gt;</div>
@@ -158,35 +184,49 @@
 
 <!-- PROJECTS -->
 <section class="section" id="projects">
-  <p class="section-tag reveal">04 &mdash; Projects</p>
-  <h2 class="section-title reveal">Things I've built</h2>
+  <p class="section-tag reveal">04 &mdash; SELECTED WORK</p>
+  <h2 class="section-title reveal">Projects I&rsquo;ve Built</h2>
   <div class="projects-grid">
-    <article class="project-card reveal">
-      <div class="project-glow"></div>
-      <div class="project-top">
-        <span class="project-num">01</span>
-        <div class="project-links">
-          <a href="#" aria-label="View code" title="Repo coming soon">&lt;/&gt;</a>
-          <a href="#" aria-label="Live demo" title="Currently running on localhost">&#8599;</a>
-        </div>
+    <article class="project-feature reveal">
+      <div class="project-visual" aria-hidden="true">
+        <div class="project-visual-grid"></div>
+        <span class="project-visual-tag">&lt;/&gt; PHP + MySQL</span>
+        <span class="project-visual-tag project-visual-tag-2">AI Assistant</span>
       </div>
-      <h3>PetHealthCare</h3>
-      <p>A web-based veterinary clinic management system with an AI assistant &mdash; handles patient records, appointments, and clinic operations.</p>
-      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div>
+      <div class="project-info">
+        <div class="project-top">
+          <span class="project-num">01</span>
+          <div class="project-links">
+            <a href="#" aria-label="View code" title="Repo coming soon">&lt;/&gt;</a>
+            <a href="#" aria-label="Live demo" title="Currently running on localhost">&#8599;</a>
+          </div>
+        </div>
+        <h3>PetHealthCare <span class="project-arrow">&rarr;</span></h3>
+        <p class="project-sub">Web-Based Veterinary Clinic Management System with AI Assistant</p>
+        <p>A web-based veterinary clinic management system with an AI assistant &mdash; handles patient records, appointments, and clinic operations.</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div>
+      </div>
     </article>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section contact" id="contact">
-  <p class="section-tag reveal">05 &mdash; Contact</p>
-  <h2 class="section-title reveal">Let's build something together</h2>
-  <p class="contact-sub reveal">Got a project in mind or just want to say hi? My inbox is always open.</p>
-  <a href="mailto:jernelsarmiento71@gmail.com" class="btn btn-primary btn-lg reveal">Email Me</a>
+  <p class="section-tag reveal">05 &mdash; CONTACT</p>
+  <h2 class="section-title contact-title reveal">LET&rsquo;S BUILD<br>SOMETHING GREAT.</h2>
+  <p class="contact-sub reveal">Have an idea, project, or collaboration in mind?</p>
+  <a href="mailto:jernelsarmiento71@gmail.com" class="btn btn-primary btn-lg reveal magnetic">Email Me <span>&rarr;</span></a>
 </section>
 
 <footer class="footer">
-  <p>Designed &amp; built by Jernel A. Sarmiento &mdash; <span id="year"></span></p>
+  <div>
+    <p class="footer-name">JERNEL SARMIENTO</p>
+    <p class="footer-tagline">Web Development &middot; AI-Assisted Development</p>
+  </div>
+  <div class="footer-right">
+    <p>&copy; <span id="year"></span> Jernel Sarmiento</p>
+    <a href="#home" class="back-to-top">BACK TO TOP <span>&uarr;</span></a>
+  </div>
 </footer>
 
 <script src="script.js"></script>
