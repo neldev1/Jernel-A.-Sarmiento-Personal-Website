@@ -13,6 +13,30 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
+// ---------- Scroll progress bar ----------
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = pct + '%';
+});
+
+// ---------- Active section nav highlighting ----------
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px' });
+sections.forEach(sec => sectionObserver.observe(sec));
+
 // ---------- Mobile nav toggle ----------
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');

@@ -110,6 +110,12 @@ a:focus-visible, button:focus-visible {
   will-change: left, top;
 }
 
+/* ---------- Scroll progress ---------- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+  background: var(--accent); z-index: 200; transition: width 0.1s linear;
+}
+
 /* ---------- Nav ---------- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -142,6 +148,24 @@ a:focus-visible, button:focus-visible {
 }
 .nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--text); }
+.nav-links a.active::after { width: 100%; background: var(--accent); }
+
+.theme-toggle {
+  position: relative; width: 34px; height: 34px; border-radius: 50%;
+  background: none; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; transition: border-color 0.3s var(--ease);
+}
+.theme-toggle:hover { border-color: var(--text-dim); }
+.theme-toggle .icon-sun, .theme-toggle .icon-moon {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+.theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+:root[data-theme="dark"] .theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+:root[data-theme="light"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
 
 .nav-cta {
   font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;
