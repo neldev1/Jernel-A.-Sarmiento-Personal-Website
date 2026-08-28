@@ -248,13 +248,13 @@ a:focus-visible, button:focus-visible {
   padding: 36px 28px; text-align: center;
 }
 .profile-avatar {
-  width: 84px; height: 84px; border-radius: 50%;
-  overflow: hidden; margin: 0 auto 18px;
+  width: 96px; height: 96px; border-radius: 50%;
+  overflow: hidden; margin: 0 auto 20px;
   border: 1px solid var(--border);
 }
 .profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.profile-name { font-size: 1.1rem; margin-bottom: 6px; }
-.profile-degree, .profile-loc { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 4px; }
+.profile-degree { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.profile-loc { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 4px; }
 .profile-divider { height: 1px; background: var(--border); margin: 22px 0; }
 .profile-row {
   display: flex; justify-content: space-between; align-items: center;
