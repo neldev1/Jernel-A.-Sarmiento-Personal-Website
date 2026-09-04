@@ -66,20 +66,6 @@ a:focus-visible, button:focus-visible {
   .marquee-track { animation: none; }
 }
 
-@media (pointer: fine) {
-  body { cursor: none; }
-  a, button { cursor: none; }
-}
-
-/* ---------- Custom cursor ---------- */
-.cursor-dot {
-  position: fixed; top: 0; left: 0; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--text); pointer-events: none; z-index: 300;
-  transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.15s ease;
-  will-change: left, top;
-}
-@media (pointer: coarse) { .cursor-dot { display: none; } }
-
 /* ---------- Background layers ---------- */
 .bg-grid {
   position: fixed; inset: 0; z-index: -2;
@@ -467,8 +453,7 @@ a:focus-visible, button:focus-visible {
     text-align: center;
   }
   .nav-links a { font-size: 0.8rem; }
-  .cursor-glow, .cursor-dot { display: none; }
-  body, a, button { cursor: auto; }
+  .cursor-glow { display: none; }
 
   .hero { padding: 120px 20px 64px; }
   .hero-actions { flex-direction: column; width: 100%; max-width: 320px; }

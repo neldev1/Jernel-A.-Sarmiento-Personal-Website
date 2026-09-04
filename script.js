@@ -47,14 +47,11 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// ---------- Custom cursor ----------
+// ---------- Cursor glow ----------
 const glow = document.getElementById('cursorGlow');
-const cursorDot = document.getElementById('cursorDot');
 window.addEventListener('mousemove', (e) => {
   glow.style.left = e.clientX + 'px';
   glow.style.top = e.clientY + 'px';
-  cursorDot.style.left = e.clientX + 'px';
-  cursorDot.style.top = e.clientY + 'px';
 });
 
 // ---------- Magnetic buttons ----------
