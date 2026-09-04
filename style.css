@@ -126,7 +126,7 @@ a:focus-visible, button:focus-visible {
 /* ---------- Nav ---------- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: flex-end;
   padding: 22px clamp(20px, 5vw, 64px);
   backdrop-filter: blur(14px);
   background: rgba(8,8,8,0.4);
@@ -136,11 +136,6 @@ a:focus-visible, button:focus-visible {
 .nav.scrolled { border-color: var(--border); background: rgba(8,8,8,0.82); }
 :root[data-theme="light"] .nav { background: rgba(250,250,250,0.55); }
 :root[data-theme="light"] .nav.scrolled { background: rgba(250,250,250,0.9); }
-
-.nav-word {
-  font-family: var(--font-mono); font-weight: 600; font-size: 0.85rem;
-  color: var(--text); letter-spacing: 1.5px; text-transform: uppercase;
-}
 
 .nav-right { display: flex; align-items: center; gap: 40px; }
 .nav-links { display: flex; gap: 32px; }
@@ -214,19 +209,9 @@ a:focus-visible, button:focus-visible {
   display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; align-items: start;
 }
 
-.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--status-green); box-shadow: 0 0 8px var(--status-green); animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 9px;
-  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim);
-  border: 1px solid var(--border); padding: 8px 16px; border-radius: 100px;
-  margin-bottom: 30px;
 }
 
 .hero-name {
@@ -515,9 +500,7 @@ a:focus-visible, button:focus-visible {
 /* Small phones */
 @media (max-width: 480px) {
   .nav { padding: 16px 16px; }
-  .nav-word { font-size: 0.72rem; }
 
-  .hero-badge { font-size: 0.65rem; padding: 6px 12px; }
   .hero-card { padding: 28px 20px; }
 
   .skills-grid { grid-template-columns: 1fr; }
