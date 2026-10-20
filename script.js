@@ -47,13 +47,6 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// ---------- Cursor glow ----------
-const glow = document.getElementById('cursorGlow');
-window.addEventListener('mousemove', (e) => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-});
-
 // ---------- Halftone portrait and cursor-following eyes ----------
 const portrait = document.getElementById('profilePortrait');
 const portraitImage = portrait.querySelector('.profile-portrait-fallback');
@@ -164,19 +157,6 @@ window.addEventListener('pointerout', (event) => {
     portrait.style.setProperty('--eye-x', '0px');
     portrait.style.setProperty('--eye-y', '0px');
   }
-});
-
-// ---------- Magnetic buttons ----------
-document.querySelectorAll('.magnetic').forEach(el => {
-  el.addEventListener('mousemove', (e) => {
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    el.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
-  });
-  el.addEventListener('mouseleave', () => {
-    el.style.transform = '';
-  });
 });
 
 // ---------- Scroll reveal ----------
