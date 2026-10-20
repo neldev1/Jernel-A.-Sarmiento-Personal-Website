@@ -68,7 +68,12 @@
     </div>
 
     <div class="hero-card reveal">
-      <div class="profile-avatar"><img src="profile-photo.jpg" alt="Jernel A. Sarmiento"></div>
+      <div class="profile-portrait" id="profilePortrait">
+        <img class="profile-portrait-fallback" src="profile-photo.jpg" alt="Portrait of Jernel A. Sarmiento">
+        <canvas class="profile-portrait-canvas" id="profilePortraitCanvas" role="img" aria-label="Monochrome halftone portrait of Jernel A. Sarmiento" hidden></canvas>
+        <span class="portrait-eye portrait-eye-left" aria-hidden="true"></span>
+        <span class="portrait-eye portrait-eye-right" aria-hidden="true"></span>
+      </div>
       <p class="profile-degree">BS Information System, Class of 2027</p>
       <p class="profile-loc">Brgy. Muzon, San Jose Del Monte, Bulacan</p>
       <div class="profile-divider"></div>
