@@ -379,6 +379,10 @@ button:focus-visible {
   display: none;
 }
 
+.profile-portrait-fallback[hidden] {
+  display: none;
+}
+
 .scroll-cue {
   display: flex;
   justify-content: center;
