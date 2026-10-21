@@ -80,8 +80,8 @@ function renderPortrait() {
     const red = pixels[offset];
     const green = pixels[offset + 1];
     const blue = pixels[offset + 2];
-    return Math.min(red, green, blue) > 225 &&
-      Math.max(red, green, blue) - Math.min(red, green, blue) < 28;
+    return Math.min(red, green, blue) > 210 &&
+      Math.max(red, green, blue) - Math.min(red, green, blue) < 40;
   };
   const addEdge = (index) => {
     if (!visited[index] && isBackground(index)) {
