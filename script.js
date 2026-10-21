@@ -55,7 +55,7 @@ const portraitContext = portraitCanvas.getContext('2d', { willReadFrequently: tr
 
 function renderHalftonePortrait() {
   const width = 320;
-  const height = 400;
+  const height = 320;
   portraitCanvas.width = width;
   portraitCanvas.height = height;
 
@@ -142,22 +142,6 @@ if (portraitImage.complete && portraitImage.naturalWidth) {
 } else {
   portraitImage.addEventListener('load', renderHalftonePortrait, { once: true });
 }
-
-window.addEventListener('pointermove', (event) => {
-  if (event.pointerType === 'touch') return;
-  const bounds = portrait.getBoundingClientRect();
-  const horizontal = (event.clientX - (bounds.left + bounds.width / 2)) / (window.innerWidth / 2);
-  const vertical = (event.clientY - (bounds.top + bounds.height * 0.35)) / (window.innerHeight / 2);
-  portrait.style.setProperty('--eye-x', `${Math.max(-1, Math.min(1, horizontal)) * 4}px`);
-  portrait.style.setProperty('--eye-y', `${Math.max(-1, Math.min(1, vertical)) * 3}px`);
-});
-
-window.addEventListener('pointerout', (event) => {
-  if (!event.relatedTarget) {
-    portrait.style.setProperty('--eye-x', '0px');
-    portrait.style.setProperty('--eye-y', '0px');
-  }
-});
 
 // ---------- Scroll reveal ----------
 const revealEls = document.querySelectorAll('.reveal');

@@ -16,7 +16,6 @@
   --text: #fff;
   --profile-surface: #111;
   --profile-line: rgba(255, 255, 255, 0.1);
-  --profile-status: #4ade80;
   --gutter: clamp(1.25rem, 5vw, 4rem);
   --content: 1240px;
   --font-sans: "Geist", "Geist Sans", Arial, sans-serif;
@@ -33,7 +32,6 @@
   --text: #000;
   --profile-surface: #fff;
   --profile-line: rgba(0, 0, 0, 0.1);
-  --profile-status: #15803d;
 }
 
 html {
@@ -125,7 +123,6 @@ button:focus-visible {
 .nav-links a,
 .nav-cta,
 .section-tag,
-.profile-row,
 .edu-level,
 .edu-year,
 .project-num,
@@ -341,7 +338,10 @@ button:focus-visible {
 
 .hero-card {
   min-width: 0;
-  padding: 36px 28px;
+  width: 100%;
+  max-width: 400px;
+  justify-self: center;
+  padding: 30px 24px 28px;
   border: 1px solid var(--profile-line);
   border-radius: 4px;
   background: var(--profile-surface);
@@ -349,16 +349,15 @@ button:focus-visible {
 }
 
 .profile-portrait {
-  --eye-x: 0px;
-  --eye-y: 0px;
   position: relative;
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 4 / 5;
+  width: 112px;
+  height: 112px;
   overflow: hidden;
-  margin: 0 auto 20px;
+  margin: 0 auto 18px;
+  border: 1px solid var(--text);
+  border-radius: 50%;
   background: #080808;
-  border: 1px solid var(--profile-line);
+  box-shadow: 0 0 26px rgba(255, 255, 255, 0.1);
 }
 
 .profile-portrait-fallback,
@@ -380,71 +379,17 @@ button:focus-visible {
   display: none;
 }
 
-.portrait-eye {
-  position: absolute;
-  top: calc(35% - 6px);
-  width: 10px;
-  height: 12px;
-  border-radius: 50%;
-  background: #050505;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.72);
-  transform: translate(var(--eye-x), var(--eye-y));
-  transition: transform 90ms ease-out;
-  pointer-events: none;
+.profile-name {
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
 }
-
-.portrait-eye::after {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #fff;
-  content: "";
-}
-
-.portrait-eye-left { left: calc(35% - 5px); }
-.portrait-eye-right { left: calc(58% - 5px); }
 
 .profile-degree {
-  margin-bottom: 6px;
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-.profile-loc {
-  margin-bottom: 4px;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.profile-divider {
-  height: 1px;
-  margin: 22px 0;
-  background: var(--profile-line);
-}
-
-.profile-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 9px 0;
   color: var(--muted);
   font-size: 0.78rem;
-  letter-spacing: 0.02em;
 }
-
-.profile-row strong {
-  color: var(--text);
-  font-family: var(--font-sans);
-  font-size: inherit;
-  font-weight: 500;
-  text-align: right;
-}
-
-.status-ok { color: var(--profile-status) !important; }
 
 .scroll-cue {
   display: flex;
@@ -846,8 +791,7 @@ button:focus-visible {
   .hero-name { font-size: clamp(3.2rem, 14vw, 6rem); }
   .hero-actions { align-items: stretch; flex-direction: column; max-width: 340px; }
   .btn { justify-content: space-between; }
-  .hero-card { max-width: 440px; }
-  .profile-portrait { max-width: 320px; }
+  .hero-card { max-width: 400px; }
   .scroll-cue { margin-top: 40px; }
 
   .about-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -863,10 +807,6 @@ button:focus-visible {
   .project-visual { min-height: 240px; }
   .project-info { min-height: 300px; }
   .project-feature h3 { margin-top: 42px; }
-}
-
-@media (max-width: 480px) {
-  .hero-card { padding: 28px 20px; }
 }
 
 @media (max-width: 420px) {
