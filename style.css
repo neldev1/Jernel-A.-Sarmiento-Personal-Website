@@ -14,8 +14,6 @@
   --line: #292929;
   --muted: #999;
   --text: #fff;
-  --profile-surface: #111;
-  --profile-line: rgba(255, 255, 255, 0.1);
   --gutter: clamp(1.25rem, 5vw, 4rem);
   --content: 1240px;
   --font-sans: "Geist", "Geist Sans", Arial, sans-serif;
@@ -30,8 +28,6 @@
   --line: #dedede;
   --muted: #666;
   --text: #000;
-  --profile-surface: #fff;
-  --profile-line: rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -295,25 +291,31 @@ button:focus-visible {
 
 .hero {
   position: relative;
-  padding: 142px var(--gutter) 82px;
+  display: flex;
+  min-height: min(780px, 100svh);
+  flex-direction: column;
+  justify-content: center;
+  padding: 112px var(--gutter) 38px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.78fr);
-  gap: clamp(2.5rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
-  max-width: var(--content);
+  width: 100%;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
 .hero-left {
-  padding: 3rem 0;
+  max-width: 620px;
+  padding: 2rem 0;
 }
 
 .hero-name {
   margin-bottom: 24px;
-  font-size: clamp(3.25rem, 8.8vw, 8rem);
+  font-size: clamp(3.5rem, 7.5vw, 7.4rem);
   font-weight: 500;
   letter-spacing: -0.09em;
   line-height: 0.88;
@@ -322,12 +324,20 @@ button:focus-visible {
 
 .hero-roles {
   max-width: 36rem;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.76rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.hero-summary {
+  max-width: 32rem;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+  line-height: 1.7;
 }
 
 .hero-actions {
@@ -336,59 +346,24 @@ button:focus-visible {
   gap: 10px;
 }
 
-.hero-card {
-  min-width: 0;
-  width: 100%;
-  max-width: 400px;
-  justify-self: center;
-  padding: 30px 24px 28px;
-  border: 1px solid var(--profile-line);
-  border-radius: 4px;
-  background: var(--profile-surface);
-  text-align: center;
-}
-
-.profile-portrait {
+.hero-portrait {
   position: relative;
-  width: 112px;
-  height: 112px;
+  width: 100%;
+  max-width: 620px;
+  aspect-ratio: 1;
   overflow: hidden;
-  margin: 0 auto 18px;
-  border: 1px solid var(--text);
-  border-radius: 50%;
-  background: #080808;
-  box-shadow: 0 0 26px rgba(255, 255, 255, 0.1);
+  justify-self: end;
 }
 
 .profile-portrait-fallback,
 .profile-portrait-canvas {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-.profile-portrait-fallback {
-  filter: grayscale(1) contrast(1.2);
-}
-
-.profile-portrait-canvas {
-  image-rendering: pixelated;
+  object-fit: contain;
 }
 
 .profile-portrait-canvas[hidden] {
   display: none;
-}
-
-.profile-name {
-  margin-bottom: 4px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-}
-
-.profile-degree {
-  color: var(--muted);
-  font-size: 0.78rem;
 }
 
 .scroll-cue {
@@ -732,7 +707,7 @@ button:focus-visible {
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 .hero-left .reveal:nth-child(2) { transition-delay: 60ms; }
 .hero-left .reveal:nth-child(3) { transition-delay: 120ms; }
-.hero-card.reveal { transition-delay: 100ms; }
+.hero-portrait.reveal { transition-delay: 100ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -750,12 +725,10 @@ button:focus-visible {
 @media (max-width: 900px) {
   .nav-brand span { display: none; }
 
-  .hero-grid {
-    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-    gap: 2rem;
-  }
+  .hero-grid { gap: 2rem; }
 
   .hero-name { font-size: clamp(3rem, 8vw, 5.5rem); }
+  .hero-portrait { max-width: 500px; }
   .about-grid { grid-template-columns: 1fr 0.9fr; gap: 2rem; }
   .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -785,13 +758,13 @@ button:focus-visible {
   .nav-links.open a { padding: 12px 0; border-bottom: 1px solid var(--line); }
   .nav-links.open a:last-child { border-bottom: 0; }
 
-  .hero { padding-top: 108px; padding-bottom: 58px; }
+  .hero { min-height: 0; padding-top: 100px; padding-bottom: 48px; }
   .hero-grid { grid-template-columns: 1fr; gap: 30px; }
   .hero-left { padding: 1rem 0 0; }
   .hero-name { font-size: clamp(3.2rem, 14vw, 6rem); }
+  .hero-portrait { max-width: 500px; justify-self: center; }
   .hero-actions { align-items: stretch; flex-direction: column; max-width: 340px; }
   .btn { justify-content: space-between; }
-  .hero-card { max-width: 400px; }
   .scroll-cue { margin-top: 40px; }
 
   .about-grid { grid-template-columns: 1fr; gap: 24px; }

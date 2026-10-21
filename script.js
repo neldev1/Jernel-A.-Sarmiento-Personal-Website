@@ -47,22 +47,20 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// ---------- Halftone portrait and cursor-following eyes ----------
+// ---------- Portrait cutout ----------
 const portrait = document.getElementById('profilePortrait');
 const portraitImage = portrait.querySelector('.profile-portrait-fallback');
 const portraitCanvas = document.getElementById('profilePortraitCanvas');
 const portraitContext = portraitCanvas.getContext('2d', { willReadFrequently: true });
 
-function renderHalftonePortrait() {
-  const width = 320;
-  const height = 320;
+function renderPortrait() {
+  const width = 640;
+  const height = 640;
   portraitCanvas.width = width;
   portraitCanvas.height = height;
 
   const cropWidth = portraitImage.naturalHeight * (width / height);
   const cropX = (portraitImage.naturalWidth - cropWidth) / 2;
-  portraitContext.fillStyle = '#080808';
-  portraitContext.fillRect(0, 0, width, height);
   portraitContext.drawImage(
     portraitImage,
     cropX, 0, cropWidth, portraitImage.naturalHeight,
@@ -82,8 +80,8 @@ function renderHalftonePortrait() {
     const red = pixels[offset];
     const green = pixels[offset + 1];
     const blue = pixels[offset + 2];
-    return Math.min(red, green, blue) > 205 &&
-      Math.max(red, green, blue) - Math.min(red, green, blue) < 32;
+    return Math.min(red, green, blue) > 225 &&
+      Math.max(red, green, blue) - Math.min(red, green, blue) < 28;
   };
   const addEdge = (index) => {
     if (!visited[index] && isBackground(index)) {
@@ -109,27 +107,8 @@ function renderHalftonePortrait() {
     if (y < height - 1) addEdge(index + width);
   }
 
-  const bayer = [
-    [0, 8, 2, 10],
-    [12, 4, 14, 6],
-    [3, 11, 1, 9],
-    [15, 7, 13, 5]
-  ];
-  for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-      const index = y * width + x;
-      const offset = index * 4;
-      if (visited[index]) {
-        pixels[offset + 3] = 0;
-        continue;
-      }
-      const luminance = pixels[offset] * 0.299 + pixels[offset + 1] * 0.587 + pixels[offset + 2] * 0.114;
-      const threshold = (bayer[y % 4][x % 4] + 0.5) * 16;
-      const shade = luminance > threshold ? 255 : 0;
-      pixels[offset] = shade;
-      pixels[offset + 1] = shade;
-      pixels[offset + 2] = shade;
-    }
+  for (let index = 0; index < visited.length; index++) {
+    if (visited[index]) pixels[index * 4 + 3] = 0;
   }
 
   portraitContext.putImageData(frame, 0, 0);
@@ -138,9 +117,9 @@ function renderHalftonePortrait() {
 }
 
 if (portraitImage.complete && portraitImage.naturalWidth) {
-  renderHalftonePortrait();
+  renderPortrait();
 } else {
-  portraitImage.addEventListener('load', renderHalftonePortrait, { once: true });
+  portraitImage.addEventListener('load', renderPortrait, { once: true });
 }
 
 // ---------- Scroll reveal ----------
